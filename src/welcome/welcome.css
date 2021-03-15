@@ -1,0 +1,26 @@
+.welcome-container {
+  margin: 0px;
+  padding: 0px;
+  height: 95vh;
+  background-image: url("./welcome.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.welcome-text-left {
+  padding-left: 40px;
+}
+
+.welcome-text-left .big {
+  font-size: 48px;
+  font-family: "Rubik", sans-serif;
+  color: aliceblue;
+  letter-spacing: 2px;
+}
+
+.welcome-text-left .normal {
+  font-size: 24px;
+  font-family: "Rubik", sans-serif;
+  color: beige;
+}
