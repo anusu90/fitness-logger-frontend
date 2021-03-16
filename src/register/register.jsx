@@ -27,6 +27,14 @@ export default function Register() {
     const imgStyle = {
         borderRadius: "20px",
     }
+    const buttonStyle = {
+        background: "#37474f",
+        border: "#37474f",
+        borderRadius: "5px",
+        height: "40px",
+        width: "100px",
+        color: "white"
+    }
 
     async function handleRegister(e) {
         setError(null);
@@ -103,7 +111,7 @@ export default function Register() {
                     <div className="col-12 login-error">
                         {error}
                     </div>
-                    <button className="register-button" onClick={(e) => { handleRegister(e) }} ref={regBtn}>{(loading) ? <FontAwesomeIcon icon={faSpinner} spin size="2x" /> : "Submit"}</button>
+                    <button className="register-button" style={buttonStyle} onClick={(e) => { handleRegister(e) }} ref={regBtn}>{(loading) ? <FontAwesomeIcon icon={faSpinner} spin size="2x" /> : "Submit"}</button>
                 </div>
                 <div className="col-md-4">
                     <img src={leftImage} alt="" style={imgStyle} />

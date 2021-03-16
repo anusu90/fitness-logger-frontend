@@ -5,13 +5,13 @@ import { useHistory } from 'react-router-dom'
 import { AppContext } from "../contextservice/contextservice"
 
 import Button from '@material-ui/core/Button';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 export default function Login() {
-
     let context = useContext(AppContext)
     let [userState, setUserState] = context.userState;
     let [user, setUser] = context.user;
@@ -22,6 +22,8 @@ export default function Login() {
     let [email, setEmail] = useState(null)
     let [password, setPassword] = useState(null)
     let loginBtnRef = useRef(null);
+
+
 
     async function handleLogin(e) {
         setError(null);
@@ -61,13 +63,22 @@ export default function Login() {
             } else if (loginRequest.status == 200) {
                 setUser(loginReqBody)
                 setUserState(true)
-                history.push("/")
+                history.push("/dashboard")
             }
         }
     }
 
     const imgStyle = {
         borderRadius: "20px",
+    }
+
+    const buttonStyle = {
+        background: "#37474f",
+        border: "#37474f",
+        borderRadius: "5px",
+        height: "40px",
+        width: "100px",
+        color: "white"
     }
 
     return (
@@ -92,7 +103,7 @@ export default function Login() {
                     <div className="col-12 login-error">
                         {error}
                     </div>
-                    <button className="login-button " onClick={(e) => { handleLogin(e) }} ref={loginBtnRef}>{(loading) ? <FontAwesomeIcon icon={faSpinner} spin size="2x" /> : "Submit"}</button>
+                    <button className="login-button " style={buttonStyle} onClick={(e) => { handleLogin(e) }} ref={loginBtnRef}>{(loading) ? <FontAwesomeIcon icon={faSpinner} spin size="2x" /> : "Submit"}</button>
                 </div>
                 <div className="col-md-4">
                     <img src={leftImage} alt="IMG" style={imgStyle} />
