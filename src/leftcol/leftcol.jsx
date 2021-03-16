@@ -18,7 +18,7 @@ export default function LeftCol() {
             <hr className="sidebar-divider my-0" />
             {/* Nav Item - Dashboard */}
             <li className="nav-item active">
-                <Link className="nav-link" to="/dashboard">
+                <Link className="nav-link" to="/dashboard/workout">
                     <FontAwesomeIcon icon={faRunning} fixedWidth />
                     <span> Workout </span></Link>
             </li>

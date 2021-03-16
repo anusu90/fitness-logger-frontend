@@ -7,6 +7,7 @@ import "./dashboard.css"
 
 import Profile from "../profile/profile"
 import LeftCol from "../leftcol/leftcol"
+import AddExercise from "../exercise/addexercise"
 
 
 
@@ -46,13 +47,20 @@ export default function DashBoard() {
                             <div className="row p-2" style={{ backgroundColor: "white", borderRadius: "5px" }}>
                                 <Linechart data={data} title={"Weight"} axislabel={["Date", "KGs"]} />
                             </div>
-
                             <div className="row">
-                                {/* <Donut data={data}></Donut> */}
-                                {/* <Barchart data={data}></Barchart> */}
                                 Exercise Graph
                             </div>
 
+                        </Route>
+                        <Route path="/dashboard/workout" exact>
+                            <div className="row">
+                                <h5>
+                                    Log your workout
+                                </h5>
+                            </div>
+                            <div className="row">
+                                <AddExercise></AddExercise>
+                            </div>
                         </Route>
                         {/* <Calendar onChange={setDate} date={date} /> */}
                         <Route path="/dashboard/update" component={Profile} />
