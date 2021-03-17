@@ -15,7 +15,7 @@ export default function AddExercise() {
 
     let [loading, setLoading] = useState(false);
     let [date, setDate] = useState(null);
-    let [exercise, setExercise] = useState("DEAD LIFT");
+    let [exercise, setExercise] = useState(0);
     let [set, setSet] = useState(0);
     let [reps, setReps] = useState(0);
     let [weight, setWeight] = useState(0);
@@ -56,8 +56,8 @@ export default function AddExercise() {
             loginBtnRef.current.disabled = false;
         } else {
             let url = String(process.env.REACT_APP_BACKEND_URL) + "/users/exercise/insert"
-            console.log(url)
             let data = { date: date, exercise: exercise, set: set, reps: reps, weight: weight }
+            console.log(data)
             console.log(data)
             let insertRequest = await fetch(url, {
                 method: "POST",
@@ -83,7 +83,7 @@ export default function AddExercise() {
                 setSet(0);
                 setReps(0)
                 setWeight(0)
-                setExercise("DEAD LIFT")
+                setExercise(0)
             }
             // setLoading(false);
         }
