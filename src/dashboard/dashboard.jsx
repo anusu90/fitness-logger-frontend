@@ -8,6 +8,7 @@ import "./dashboard.css"
 import Profile from "../profile/profile"
 import LeftCol from "../leftcol/leftcol"
 import AddExercise from "../exercise/addexercise"
+import Table from "../table/table"
 
 
 
@@ -64,6 +65,7 @@ export default function DashBoard() {
                         </Route>
                         {/* <Calendar onChange={setDate} date={date} /> */}
                         <Route path="/dashboard/update" component={Profile} />
+                        <Route path="/dashboard/table" component={Table} />
                     </Switch>
                 </div>
             </div>

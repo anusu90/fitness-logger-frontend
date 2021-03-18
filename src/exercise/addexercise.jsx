@@ -49,7 +49,7 @@ export default function AddExercise() {
         setLoading(true);
         loginBtnRef.current.disabled = true;
 
-        if (!set || !reps || !weight) {
+        if (!set || !reps || !weight || !date) {
             setError("Please fill in the details");
             setLoading(false);
             console.log("empty things")
@@ -114,7 +114,7 @@ export default function AddExercise() {
                         <div className="row g-3">
                             <div className="col">
                                 <label htmlFor="data">Date</label>
-                                <input type="date" name="" id="data" className="form-control" onChange={(e) => setDate(e.target.value)} />
+                                <input type="date" name="" id="data" className="form-control" value={date} onChange={(e) => setDate(e.target.value)} />
                             </div>
                             <div className="col">
                                 <label htmlFor="exercise-select">Select Exercise</label>
