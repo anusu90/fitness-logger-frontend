@@ -71,7 +71,7 @@ export default function NavBar() {
         return (
             <>
                 <Navbar bg="dark" variant="dark" style={navStyle}>
-                    <Link to="/" style={logoStyle}> Gain-X </Link>
+                    <Link to="/dashboard" style={logoStyle}> Gain-X </Link>
                     <Nav className="ml-auto nav-ul">
                         <Link style={style} to="/features">Features</Link>
                         <Link style={style} to="/pricing">Pricing</Link>

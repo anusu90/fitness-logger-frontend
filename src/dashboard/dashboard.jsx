@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -9,6 +9,7 @@ import Profile from "../profile/profile"
 import LeftCol from "../leftcol/leftcol"
 import AddExercise from "../exercise/addexercise"
 import Table from "../table/table"
+import Exercise from "../exercise/exercise"
 
 
 
@@ -31,6 +32,24 @@ export default function DashBoard() {
         data: [65, 59, 80, 81, 56, 55, 40]
     }
 
+    let [data2, setData2] = useState([])
+
+    useEffect(async () => {
+        let url = String(process.env.REACT_APP_BACKEND_URL) + "/users/exercisemax";
+        let exerList = []
+        let getExerReq = await fetch(url, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: "include",
+            mode: "cors",
+        })
+        let getExerBody = await getExerReq.json();
+        console.log(getExerBody);
+        setData2(getExerBody)
+    }, []);
+
     return (
         <div className="container-fluid dashboard-container" >
             <div className="row ">
@@ -48,8 +67,19 @@ export default function DashBoard() {
                             <div className="row p-2" style={{ backgroundColor: "white", borderRadius: "5px" }}>
                                 <Linechart data={data} title={"Weight"} axislabel={["Date", "KGs"]} />
                             </div>
+                            <br />
+                            <br />
+
                             <div className="row">
-                                Exercise Graph
+                                {
+                                    data2.map(obj => {
+                                        return (
+
+                                            <Exercise obj={obj} />
+
+                                        )
+                                    })
+                                }
                             </div>
 
                         </Route>
