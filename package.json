@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^4.6.0",
     "chart.js": "^2.9.4",
+    "dayjs": "^1.10.4",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "moment": "^2.29.1",

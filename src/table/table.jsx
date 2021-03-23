@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import dayjs from "dayjs"
 
 export default function Table() {
 
@@ -43,7 +44,7 @@ export default function Table() {
                                 <tr>
                                     <th scope="row">{index + 1}</th>
                                     <td>{exerciseList[obj.exercise_id]}</td>
-                                    <td>{obj.date_exercise}</td>
+                                    <td>{dayjs(obj.date_exercise).format("DD-MM-YYYY")}</td>
                                     <td>{obj.sets}</td>
                                     <td>{obj.reps}</td>
                                     <td>{obj.weight}</td>

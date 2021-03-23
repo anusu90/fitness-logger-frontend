@@ -11,6 +11,8 @@ import AddExercise from "../exercise/addexercise"
 import Table from "../table/table"
 import Exercise from "../exercise/exercise"
 
+import { useSpring, animated } from 'react-spring'
+
 
 
 //IMPORT CHARTS
@@ -59,16 +61,22 @@ export default function DashBoard() {
                 <div className="col-8">
                     <Switch>
                         <Route path="/dashboard" exact>
-                            <div className="row">
-                                <h5>
-                                    Weight Graph
-                                </h5>
+                            <div className="row justify-content-center m-3">
+                                <h3>
+                                    Your Weight Graph
+                                </h3>
                             </div>
                             <div className="row p-2" style={{ backgroundColor: "white", borderRadius: "5px" }}>
                                 <Linechart data={data} title={"Weight"} axislabel={["Date", "KGs"]} />
                             </div>
                             <br />
                             <br />
+
+                            <div className="row justify-content-center">
+                                <h3>
+                                    Your Best Performances
+                                </h3>
+                            </div>
 
                             <div className="row">
                                 {
