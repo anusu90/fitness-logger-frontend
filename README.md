@@ -4,7 +4,7 @@ Backend of the website is hosted at [Fitness Logger Backend](https://github.com/
 
 ## SCREENSHOT
 
-[img](./screenshot.png)
+![SCREENSHOT](./screenshot.png)
 
 ## Available Features
 
